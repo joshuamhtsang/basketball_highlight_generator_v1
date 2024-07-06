@@ -1,5 +1,6 @@
 # basketball_highlight_generator_v1
-Generate basketball highlights automatically
+Generate basketball highlights automatically, a joint hackathon project with the
+Haggerston Bball Crew.
 
 # Setup the venv
 
@@ -11,4 +12,16 @@ $ pip install ultralytics
 
 # Cutting videos down
 
+Cut videos down using ffmpeg (can also be used to reduce framerate).
+
 $ ffmpeg -ss 00:10:00 -t 00:05:00 -i C0012.MP4 -c:v copy C0012_5mins.MP4
+
+The `C0012_5mins.MP4` file is only around 2500 frames and can be found in Albert's
+google drive:
+
+[https://drive.google.com/drive/folders/166tjGMwNxX0GpwX1paxEbDBFdFWgG9Ji]
+
+
+# Resources
+
+https://docs.ultralytics.com/modes/predict/#key-features-of-predict-mode
