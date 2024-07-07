@@ -12,9 +12,11 @@ if __name__ == '__main__':
     #results = model("https://ultralytics.com/images/bus.jpg")  # predict on an image
     results = model("C0012_10sec.MP4")
     
-    for result in results:
+    for index, result in enumerate(results):
         boxes = result.boxes
-        result.save(filename="result.jpg")
+        print(index)
+        filename = "result_" + str(index) + ".jpg"
+        result.save(filename=filename)
 
 
     path = model.export(format="onnx")  # export the model to ONNX format
