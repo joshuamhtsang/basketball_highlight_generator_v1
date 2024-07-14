@@ -10,12 +10,12 @@ if __name__ == '__main__':
     model.train(data="coco8.yaml", epochs=3)  # train the model
     metrics = model.val()  # evaluate model performance on the validation set
     #results = model("https://ultralytics.com/images/bus.jpg")  # predict on an image
-    results = model("C0012_10sec.MP4")
+    results = model("elsiejosh_on_boat.mp4")
     
     for index, result in enumerate(results):
         boxes = result.boxes
         print(index)
-        filename = "result_" + str(index) + ".jpg"
+        filename = "result_" + str(f'{index:04d}') + ".jpg"
         result.save(filename=filename)
 
 
