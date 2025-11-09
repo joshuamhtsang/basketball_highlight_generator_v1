@@ -21,7 +21,11 @@ if __name__ == '__main__':
             cv2.imshow('video', frame)
             print("VideoCapture.read() return type: ", type(frame))
             print("Shape of array: ", frame.shape)
-            cv2.imshow('video', frame[int(x_centre-width/2):int(x_centre+width/2), int(y_centre-width/2):int(y_centre+width/2), 0])
+            cv2.imshow('video', frame[
+                max(int(x_centre-width/2), 0):int(x_centre+width/2),
+                max(int(y_centre-width/2), 0):int(y_centre+width/2),
+                2
+                ])
             pos_frame = cap.get(cv2.CAP_PROP_POS_FRAMES)
             print(str(pos_frame)+" frames")
         else:
